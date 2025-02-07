@@ -1,3 +1,4 @@
+// backend/middleware/authMiddleware.js
 const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
@@ -9,9 +10,10 @@ module.exports = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token.replace('Bearer ', ''), 'secreto');
-        req.funcionario = decoded;
+        req.funcionario = decoded; // Aqui req.funcionario.id deve estar correto
         next();
     } catch (error) {
         res.status(400).json({ error: 'Token inválido!' });
     }
 };
+

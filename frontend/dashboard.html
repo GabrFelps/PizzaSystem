@@ -10,6 +10,8 @@
 
     <div class="container">
         <h2>Pizzaria</h2>
+        
+        <!-- Cadastro do Cliente -->
         <div class="section" id="cliente">
             <h3>Cadastro do Cliente</h3>
             <input type="text" id="nome" placeholder="Nome do Cliente">
@@ -19,32 +21,72 @@
             <button onclick="cadastrarCliente()">Cadastrar Cliente</button>
         </div>
 
-        <div class="section" id="pizza">
-            <h3>Pizza</h3>
-            <div class="button-group">
-                <button onclick="selecionarSabor('calabresa')">Calabresa</button>
-                <button onclick="selecionarSabor('mussarela')">Mussarela</button>
+        <!-- Cadastro do Pedido -->
+        <div class="section" id="pedido">
+            <h3>Pedido de Pizza</h3>
+            <!-- Formulário para adicionar pizzas ao pedido -->
+            <div class="sub-section" id="pizza-form">
+                <div class="sub-section" id="sabores-section">
+                    <h4>Escolha o Sabor</h4>
+                    <div class="button-group" id="sabores">
+                        <button class="pizza-button" onclick="selecionarSabor(this, 'calabresa')">Calabresa</button>
+                        <button class="pizza-button" onclick="selecionarSabor(this, 'mussarela')">Mussarela</button>
+                    </div>
+                </div>
+                <div class="sub-section" id="tamanhos-section">
+                    <h4>Escolha o Tamanho</h4>
+                    <div class="button-group" id="tamanhos">
+                        <button class="pizza-button" onclick="selecionarTamanho(this, 'media')">Média</button>
+                        <button class="pizza-button" onclick="selecionarTamanho(this, 'grande')">Grande</button>
+                    </div>
+                </div>
+                <div class="sub-section" id="quantidade-section">
+                    <h4>Quantidade</h4>
+                    <input type="number" id="quantidade" value="1" min="1">
+                </div>
+                <!-- Botão para adicionar a pizza ao pedido -->
+                <button onclick="adicionarPizza()">Adicionar Pizza</button>
             </div>
-            <div class="button-group">
-                <button onclick="selecionarTamanho('media')">Média</button>
-                <button onclick="selecionarTamanho('grande')">Grande</button>
+            
+            <!-- Botões para finalizar ou cancelar o pedido -->
+            <div class="sub-section" id="pedido-controle">
+                <button onclick="finalizarPedido()">Finalizar Pedido</button>
+                <button onclick="cancelarPedido()">Cancelar Pedido</button>
             </div>
-            <button onclick="cadastrarPizza()">Cadastrar Pizza</button>
+            
+            <!-- Tabela com os itens do pedido atual -->
+            <div class="sub-section" id="pedido-itens">
+                <h4>Itens do Pedido</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quantidade</th>
+                            <th>Sabor</th>
+                            <th>Tamanho</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-itens">
+                        <!-- Itens serão inseridos aqui -->
+                    </tbody>
+                </table>
+            </div>
         </div>
 
+        <!-- Lista de pedidos finalizados (opcional) -->
         <div class="section" id="tabela">
-            <h3>Vendas</h3>
+            <h3>Pedidos Realizados</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>Quantidade</th>
-                        <th>Sabor</th>
-                        <th>Tamanho</th>
-                        <th>Preço</th>
+                        <th>Cliente</th>
+                        <th>Funcionário</th>
+                        <th>Itens</th>
+                        <th>Data</th>
                     </tr>
                 </thead>
                 <tbody id="tabela-vendas">
-                    <!-- Os pedidos serão inseridos aqui -->
+                    <!-- Pedidos serão inseridos aqui -->
                 </tbody>
             </table>
         </div>
@@ -52,6 +94,5 @@
 
     <script src="api.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>

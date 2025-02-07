@@ -76,13 +76,33 @@ button:hover {
   transform: scale(1.05);
 }
 
-.button-group button {
-  margin: 8px;
-  background-color: #6c757d;
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.button-group button:hover {
-  background-color: #5a6268;
+/* Estilos para os botões de pizza (toggle) */
+.pizza-button {
+  padding: 12px 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pizza-button:hover {
+  background-color: #e0e0e0;
+}
+
+.pizza-button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
 }
 
 table {
@@ -123,4 +143,15 @@ tr:hover {
   border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para as subseções na área de pizza */
+.sub-section {
+  margin-bottom: 20px;
+}
+
+.sub-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #2c3e50;
 }
