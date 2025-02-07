@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria - Sistema</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Pizzaria</h2>
+        <div class="section" id="cliente">
+            <h3>Cadastro do Cliente</h3>
+            <input type="text" id="nome" placeholder="Nome do Cliente">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="text" id="bairro" placeholder="Bairro">
+            <button onclick="cadastrarCliente()">Cadastrar Cliente</button>
+        </div>
+
+        <div class="section" id="pizza">
+            <h3>Pizza</h3>
+            <div class="button-group">
+                <button onclick="selecionarSabor('calabresa')">Calabresa</button>
+                <button onclick="selecionarSabor('mussarela')">Mussarela</button>
+            </div>
+            <div class="button-group">
+                <button onclick="selecionarTamanho('media')">Média</button>
+                <button onclick="selecionarTamanho('grande')">Grande</button>
+            </div>
+            <button onclick="cadastrarPizza()">Cadastrar Pizza</button>
+        </div>
+
+        <div class="section" id="tabela">
+            <h3>Vendas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Sabor</th>
+                        <th>Tamanho</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-vendas">
+                    <!-- Os pedidos serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

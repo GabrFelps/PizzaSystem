@@ -4,72 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzaria - Sistema</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-        <div class="container">
-            <h2>Sistema de Pedidos - Pizzaria</h2>
-            <div class="section" id="login">
+    <div class="container">
+        <h2>Pizzaria</h2>
+        <div class="section" id="login">
             <h3>Login do Funcionário</h3>
             <input type="email" id="email" placeholder="E-mail">
             <input type="password" id="senha" placeholder="Senha">
             <button onclick="loginFuncionario()">Entrar</button>
+            <p>Ainda não tem uma conta? <button onclick="mostrarTelaCadastro()">Cadastrar</button></p>
         </div>
 
-        <div class="section" id="funcionario-cadastro">
-            <h3>Cadastro de Funcionário</h3>
+        <div class="section" id="cadastro" style="display: none;">
+            <h3>Cadastrar Funcionário</h3>
             <input type="text" id="funcionarioNome" placeholder="Nome">
             <input type="email" id="funcionarioEmail" placeholder="Email">
             <input type="password" id="funcionarioSenha" placeholder="Senha">
-            <button onclick="cadastrarFuncionario()">Cadastrar Funcionário</button>
-        </div>
-
-        <div class="section" id="cliente">
-            <h3>Cliente</h3>
-            <input type="text" id="nome" placeholder="Nome do Cliente">
-            <input type="text" id="endereco" placeholder="Endereço">
-            <input type="text" id="telefone" placeholder="Telefone">
-            <input type="text" id="bairro" placeholder="Bairro">
-            <button onclick="cadastrarCliente()">Cadastrar</button>
-        </div>
-
-        <div class="section" id="pizza">
-            <h3>Pizza</h3>
-            <div class="button-group">
-                <button onclick="selecionarSabor('calabresa')">Calabresa</button>
-                <button onclick="selecionarSabor('mussarela')">Mussarela</button>
-            </div>
-            <div class="button-group">
-                <button onclick="selecionarTamanho('media')">Média</button>
-                <button onclick="selecionarTamanho('grande')">Grande</button>
-            </div>
-            <button onclick="cadastrarPizza()">Cadastrar</button>
-        </div>
-
-        <div class="section" id="tabela">
-            <h3>Vendas</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Quantidade</th>
-                        <th>Sabor</th>
-                        <th>Tamanho</th>
-                        <th>Preço</th>
-                    </tr>
-                </thead>
-                <tbody id="tabela-vendas">
-                    <!-- Os pedidos serão inseridos aqui -->
-                </tbody>
-            </table>
+            <button onclick="cadastrarFuncionario()">Cadastrar</button>
+            <button onclick="voltarTelaLogin()">Voltar para Login</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
     <script src="api.js"></script>
-    <script>
-        document.querySelector("button").addEventListener("click", loginFuncionario);
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
