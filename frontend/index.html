@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria - Sistema</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sistema de Pedidos - Pizzaria</h2>
+        <div class="section" id="login">
+          <h3>Login do Funcionário</h3>
+          <input type="email" id="email" placeholder="E-mail">
+          <input type="password" id="senha" placeholder="Senha">
+          <button onclick="loginFuncionario()">Entrar</button>
+        </div>
+
+        <div class="section" id="cliente">
+            <h3>Cliente</h3>
+            <input type="text" id="nome" placeholder="Nome do Cliente">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="text" id="bairro" placeholder="Bairro">
+            <button onclick="cadastrarCliente()">Cadastrar</button>
+        </div>
+
+        <div class="section" id="pizza">
+            <h3>Pizza</h3>
+            <div class="button-group">
+                <button onclick="selecionarSabor('calabresa')">Calabresa</button>
+                <button onclick="selecionarSabor('mussarela')">Mussarela</button>
+            </div>
+            <div class="button-group">
+                <button onclick="selecionarTamanho('media')">Média</button>
+                <button onclick="selecionarTamanho('grande')">Grande</button>
+            </div>
+            <button onclick="cadastrarPizza()">Cadastrar</button>
+        </div>
+
+        <div class="section" id="tabela">
+            <h3>Vendas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantidade</th>
+                        <th>Sabor</th>
+                        <th>Tamanho</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-vendas">
+                    <!-- Os pedidos serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="api.js"></script>
+    <script>
+        document.querySelector("button").addEventListener("click", loginFuncionario);
+    </script>
+
+</body>
+</html>
