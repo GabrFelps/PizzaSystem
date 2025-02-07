@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Pizza = require('../Models/Pizza');
+const authMiddleware = require('../middleware/authMiddleware');
 
-// Criar nova pizza
-router.post('/', async (req, res) => {
+// Criar nova pizza (protegida)
+router.post('/', authMiddleware, async (req, res) => {
     try {
         const { nome, preco, tamanho } = req.body;
         const novaPizza = new Pizza({ nome, preco, tamanho });

@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
         const funcionario = await Funcionario.findOne({ email });
 
         if (!funcionario) {
-            console.log('Funcionário não encontrado');  // Log para verificar
+            console.log('Funcionário não encontrado');
             return res.status(400).json({ error: 'Funcionário não encontrado!' });
         }
 
@@ -51,7 +51,6 @@ router.post('/login', async (req, res) => {
         res.status(500).json({ error: 'Erro no login!' });
     }
 });
-
 
 // Rota protegida (apenas logados)
 router.get('/perfil', authMiddleware, (req, res) => {

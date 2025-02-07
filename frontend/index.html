@@ -8,13 +8,21 @@
 </head>
 <body>
 
-    <div class="container">
-        <h2>Sistema de Pedidos - Pizzaria</h2>
-        <div class="section" id="login">
-          <h3>Login do Funcionário</h3>
-          <input type="email" id="email" placeholder="E-mail">
-          <input type="password" id="senha" placeholder="Senha">
-          <button onclick="loginFuncionario()">Entrar</button>
+        <div class="container">
+            <h2>Sistema de Pedidos - Pizzaria</h2>
+            <div class="section" id="login">
+            <h3>Login do Funcionário</h3>
+            <input type="email" id="email" placeholder="E-mail">
+            <input type="password" id="senha" placeholder="Senha">
+            <button onclick="loginFuncionario()">Entrar</button>
+        </div>
+
+        <div class="section" id="funcionario-cadastro">
+            <h3>Cadastro de Funcionário</h3>
+            <input type="text" id="funcionarioNome" placeholder="Nome">
+            <input type="email" id="funcionarioEmail" placeholder="Email">
+            <input type="password" id="funcionarioSenha" placeholder="Senha">
+            <button onclick="cadastrarFuncionario()">Cadastrar Funcionário</button>
         </div>
 
         <div class="section" id="cliente">
